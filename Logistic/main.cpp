@@ -5,6 +5,7 @@ system; the discrete Logistic map with a 'chaotic' r parameter.
 */
 
 #include <iostream>
+#include <fstream>
 #include <stdio.h>
 
 using namespace std;
@@ -35,18 +36,31 @@ float iterate_32(float x_32){
 
 int main(){
 
+  ofstream output; //output file stream
+  output.open("LogisticData.dat"); //output file name
+
   long double x_96 = 0.5;
   double x_64 = 0.5;
   float x_32 = 0.5;
 
-for(int i=0 ; i < 1000 ; i++){
+for(int i=0 ; i <= 10000 ; i++){
 
   double x_96_display = (double) x_96;
+  //reporting 96-bit floats causes errors unless we convert them to 64-bit floats first
 
-  printf("x96 is %f \n", x_96_display);
-  printf("x64 is %f \n", x_64);
-  printf("x32 is %f \n \n", x_32);
+  //report to the console
+  printf("%i-th iteration \n", i);
+  printf("x96 is %11.10f \n", x_96_display);
+  printf("x64 is %11.10f \n", x_64);
+  printf("x32 is %11.10f \n \n", x_32);
 
+  //write in the .dat file
+  output << i << " ";
+  output << x_96_display << " ";
+  output << x_64 << " ";
+  output << x_32 << "\n";
+
+  //iterate to the next step
   x_96 = iterate_96(x_96);
   x_64 = iterate_64(x_64);
   x_32 = iterate_32(x_32);

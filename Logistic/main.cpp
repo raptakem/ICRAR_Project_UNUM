@@ -43,7 +43,7 @@ int main(){
   double x_64 = 0.5;
   float x_32 = 0.5;
 
-for(int i=0 ; i <= 10000 ; i++){
+for(int i=0 ; i <= 1000 ; i++){
 
   double x_96_display = (double) x_96;
   //reporting 96-bit floats causes errors unless we convert them to 64-bit floats first
@@ -53,6 +53,7 @@ for(int i=0 ; i <= 10000 ; i++){
   printf("x96 is %11.10f \n", x_96_display);
   printf("x64 is %11.10f \n", x_64);
   printf("x32 is %11.10f \n \n", x_32);
+
 
   //write in the .dat file
   output << i << " ";

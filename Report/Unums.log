@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  31 JAN 2017 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  1 FEB 2017 12:32
 entering extended mode
 **./Unums.tex
 (Unums.tex
@@ -915,47 +915,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--86
 []\OT1/ptm/b/n/10 IN PROGRESS 
  []
 
+! Display math should end with $$.
+<to be read again> 
+                   A
+l.95 $A
+        = \sqrt{s(s-a)(s-b)(s-c)}$ where $s = \cfrac{a + b + c}{2}$
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
 
-! LaTeX Error: Environment theorem undefined.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.95 $A = \sqrt{
+                s(s-a)(s-b)(s-c)}$ where $s = \cfrac{a + b + c}{2}$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.92 \begin{theorem}
-                    
+l.97 \end{equation}
+                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-
-! LaTeX Error: \begin{document} ended by \end{theorem}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.97 \end{theorem}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+! You can't use `\eqno' in horizontal mode.
+\endmathdisplay@a ...\df@tag \@empty \else \veqno 
+                                                  \alt@tag \df@tag \fi \ifx ...
+l.97 \end{equation}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 93--98
-\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []$ \OT1/ptm/m/n/10 where $\OML/cmm/m/it/1
-0 s \OT1/cmr/m/n/10 = []$
+Underfull \hbox (badness 2269) in paragraph at lines 95--97
+\OT1/ptm/m/n/10 A = $[]$ where $\OML/cmm/m/it/10 s \OT1/cmr/m/n/10 = []$ 
  []
 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.97 \end{equation}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--98
-
- []
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.97 \end{equation}
+                   
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
 
 
 Underfull \hbox (badness 1490) in paragraph at lines 99--101
@@ -974,37 +995,76 @@ Overfull \hbox (44.15442pt too wide) in paragraph at lines 106--107
  [] 
  []
 
-<images/missile.png, id=20, 350.05782pt x 222.8325pt>
+<images/0-100.png, id=20, 736.7525pt x 415.5525pt>
+File: images/0-100.png Graphic file (type png)
+ <use images/0-100.png>
+Package pdftex.def Info: images/0-100.png used on input line 119.
+(pdftex.def)             Requested size: 294.69577pt x 166.21805pt.
+
+Overfull \hbox (42.69577pt too wide) in paragraph at lines 119--120
+ [] 
+ []
+
+[2 <./images/Single_Triangle.png> <./images/0-100.png>]
+
+! LaTeX Error: Environment theorem undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130 \begin{theorem}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{document} ended by \end{theorem}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 \end{theorem}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<images/missile.png, id=25, 350.05782pt x 222.8325pt>
 File: images/missile.png Graphic file (type png)
  <use images/missile.png>
-Package pdftex.def Info: images/missile.png used on input line 120.
+Package pdftex.def Info: images/missile.png used on input line 145.
 (pdftex.def)             Requested size: 245.03879pt x 155.98167pt.
 
-[2 <./images/Single_Triangle.png>] [3
 
- <./images/missile.png>] (Unums.aux) ) 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./images/missile.png>] (Unums.aux) ) 
 Here is how much of TeX's memory you used:
- 5688 strings out of 493333
- 84128 string characters out of 3139195
+ 5693 strings out of 493333
+ 84220 string characters out of 3139195
  172440 words of memory out of 3000000
- 9118 multiletter control sequences out of 15000+200000
+ 9122 multiletter control sequences out of 15000+200000
  49196 words of font info for 101 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,15n,39p,1980b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dv
-ips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cme
-x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Unums.pdf (3 pages, 143357 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/
+dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
+imes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Unums.pdf (3 pages, 189623 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

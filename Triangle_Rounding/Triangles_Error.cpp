@@ -14,6 +14,8 @@
   A Looped example of using Heron's Formula for the areas of multiple triangles to show deviations
   in Area when rounding is considered and considering them as a function of the number of ULP by first
   saving the data to a .dat file
+
+  Author: Emmanouil Raptakis
 */
 
 using namespace std;

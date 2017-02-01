@@ -89,15 +89,51 @@ In the IEEE standard, the most commonly used method of rounding is known as Bank
 \subsection{Short Triangles}
 As an example of the impact that rounding errors can have on numerical calculations can be illustrated using Herons Formula for the area of a very short triangle (short being defined as being of the order of ULPs\footnote{A ULP / Unit in the Last Place or Unit of Least Precision is the 'spacing' between floating points; a more in-depth review is present in Appendix A} of the type of floating point being used; in the example a double precision float is utilised, which has a ULP of $2^{-52}$)
 
-\begin{theorem}
+\begin{equation}
 \textit{\textbf{Herons Formula}: For any Triangle of side lengths $a, b, c$ }
 \break
 $A = \sqrt{s(s-a)(s-b)(s-c)}$ where $s = \cfrac{a + b + c}{2}$
 \break
-\end{theorem}
+\end{equation}
 
 As a specific example we can use $b = 7.0$ and \break
 $a = c = {7.0 + 2^{-52}}$ as the sides of the Triangle and compute the area with Herons Formula when storing the variables as 64-bit floats v.s. 96-bit floats.
+
+\begin{figure}[h]
+
+\begin{center}
+
+\includegraphics[scale=0.7]{Single_Triangle}
+\caption{The result when comparing using double and triple precision floats for the Triangle calculation turns out to be significant!}
+
+\end{center}
+
+\end{figure}
+
+We may also observe the effect of using $b = 7.0$ with a variable number of ULPs added to the diagonal sides to observe a rather fascinating pattern emerge, and in addition it is vital to observe that even as the number of ULPs added reaches the order of $10^2$, the difference is still nonzero. While the effect is minimal in this example where a calculation is performed with one single iteration, in simulations involving continually iterating over previously rounded floats the result can be marginally different from the correct solution (see The Logistic Map).
+
+\begin{figure}[h]
+
+\begin{center}
+
+\includegraphics[scale=0.4]{0-100}
+\caption{The result when comparing using double and triple precision floats for the Triangle calculation turns out to be significant!}
+
+\end{center}
+
+\end{figure}
+
+\subsection{The Logistic Map}
+
+The Logistic Map is a very simple non-linear recurrence relation usually utilised to model populations is often utilised to illustrate chaotic behaviour arising from a very simple system given that a suitable parameter is used:
+
+\begin{theorem}
+$x_{n+1} = r x_n (1 - x_n) \hspace{35pt} x \in [0,1]$
+\end{theorem}
+
+
+
+In particular this property of chaotic behaviour is quite beneficial to illustrate how continually rounding floats can result in results that are completely wrong as the rounding results in slight 'perturbations' of the system, leading to the solution curve diverging from what it was. This can be illustrated as below:
 
 \begin{figure}[h]
 

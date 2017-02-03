@@ -125,7 +125,7 @@ USAGE
         parser.add_argument("-l", "--list", dest="lm", action="count", default=False, help="list methods [default: %(default)s]")
         parser.add_argument('-V', '--version', action='version', version=program_version_message)
         parser.add_argument('-n', '--noise', type=int, dest="noise", default = 0, help="set the strength of the noise generated [default: %(default)s]")
-        parser.add_argument('-f', '--filein', type=str, dest="filein", default = "sky.list", help="the input FITS file append noise upon [default: %(default)s]")
+        parser.add_argument('-f', '--filein', type=str, dest="filein", default = "", help="the input FITS file append noise upon [default: %(default)s]")
         # parser.add_argument(dest="paths", help="paths to folder(s) with source file(s) [default: %(default)s]", metavar="path", nargs='+')
 
         # Process arguments
@@ -151,7 +151,7 @@ USAGE
             return 0
 
         img_producer = globals()[method]
-        img = img_producer(psize=psize,noise=noise)
+        img = img_producer(psize=psize,noise=noise,filein=filein)
         plt.imshow(img)
         plt.show()
         return 0

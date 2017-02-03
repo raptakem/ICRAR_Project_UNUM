@@ -46,7 +46,7 @@ class CLIError(Exception):
     def __unicode__(self):
         return self.msg
 
-def img_rounding_noise(psize=100,noise=0):
+def img_rounding_noise(psize=100,noise=0,filein=''):
     """
     Generate digital noise image from difference of SP and DP arrays.
     The SP array is converted to DP and then the difference is calculated.
@@ -54,6 +54,8 @@ def img_rounding_noise(psize=100,noise=0):
 
     INPUTS:
         psize:       int, size of image in pixels/side
+        noise:       int, degree of 'noisiness' of the image
+        filein:      string, input file to use as the base image (before noise)
 
     RETURNS:
         the image as a numpy array (psize,psize).dtype=np.float64
@@ -77,9 +79,9 @@ def img_rounding_noise(psize=100,noise=0):
     arrays together to generate a SIGNAL + NOISE image.
     """
 
-    img *= noise*2400 #2400 just picked as it allows for a good range of noises between 0 <= noise <= 10
+    img *= noise*2400 #factor of 2400 just utilised as it allows for a good range of noises between 0 <= noise <= 10
 
-    datalist = fits.open('sky.fits') #open the .fits file from skymaker
+    datalist = fits.open(filein) #open the .fits file from skymaker
     stars = datalist[0].data #conert open data to a .np array
 
     resultant = np.add(img,stars)
@@ -122,13 +124,14 @@ USAGE
         parser.add_argument("-m", "--method", dest="method", default='img_rounding_noise', help="set method to be used [default: %(default)s]")
         parser.add_argument("-l", "--list", dest="lm", action="count", default=False, help="list methods [default: %(default)s]")
         parser.add_argument('-V', '--version', action='version', version=program_version_message)
-        parser.add_argument('-n', '--noise', type=int, dest="noise", default = 0, help="set the strength of the noise generated [default: %]")
-        # WORK ON THIS!! parser.add_argument('-f', '--filein', type=str, dest="filein")
+        parser.add_argument('-n', '--noise', type=int, dest="noise", default = 0, help="set the strength of the noise generated [default: %(default)s]")
+        parser.add_argument('-f', '--filein', type=str, dest="filein", default = "sky.list", help="the input FITS file append noise upon [default: %(default)s]")
         # parser.add_argument(dest="paths", help="paths to folder(s) with source file(s) [default: %(default)s]", metavar="path", nargs='+')
 
         # Process arguments
         args = parser.parse_args()
 
+        filein = args.filein
         psize = args.psize
         verbose = args.verbose
         method = args.method
